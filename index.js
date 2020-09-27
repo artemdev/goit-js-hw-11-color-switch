@@ -10,6 +10,7 @@ const colors = [
     '#009688',
     '#795548',
   ];
+let colorTimerId = 0; 
 
 
 
@@ -19,9 +20,9 @@ const randomIntegerFromInterval = (min, max) => {
 };
 
 // VERSION 1
-let timerId = 0;
+
 const startChangingBg = () => {
-    timerId = setInterval(() => {
+    colorTimerId = setInterval(() => {
         const i = randomIntegerFromInterval(1, 6)
         body.style.backgroundColor = colors[i]
     }, 1000);
@@ -29,7 +30,7 @@ const startChangingBg = () => {
 }
 
 const stopChangingBg = () => {
-    clearInterval(timerId)
+    clearInterval(colorTimerId)
 }
 
 // listeners
@@ -37,18 +38,17 @@ startBtn.addEventListener("click", startChangingBg)
 stopBtn.addEventListener("click", stopChangingBg)
 
 // VERSION 2
-// let timerId = 0;
 // const changeBg = (event) => {
 
 //     if(event.target.innerHTML === "Start") {
-//         timerId = setInterval(() => {
+//         colorTimerId = setInterval(() => {
 //             const i = randomIntegerFromInterval(1, 6)
 //             body.style.backgroundColor = colors[i]
 //         }, 1000);
 //     }
 
 //     if(event.target.innerHTML === "Stop") {
-//         clearInterval(timerId)
+//         clearInterval(colorTimerId)
 //     }
 // }
 
