@@ -11,6 +11,7 @@ const colors = [
     '#795548',
   ];
 let colorTimerId = 0; 
+const DELAY = 1000
 
 
 
@@ -25,7 +26,7 @@ const startChangingBg = () => {
     colorTimerId = setInterval(() => {
         const i = randomIntegerFromInterval(1, 6)
         body.style.backgroundColor = colors[i]
-    }, 1000);
+    }, DELAY);
 
 }
 
@@ -44,7 +45,7 @@ stopBtn.addEventListener("click", stopChangingBg)
 //         colorTimerId = setInterval(() => {
 //             const i = randomIntegerFromInterval(1, 6)
 //             body.style.backgroundColor = colors[i]
-//         }, 1000);
+//         }, DELAY);
 //     }
 
 //     if(event.target.innerHTML === "Stop") {
